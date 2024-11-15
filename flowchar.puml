@@ -1,0 +1,37 @@
+@startuml
+start
+:User Request (Melihat Daftar Kendaraan);
+if (Data Ditemukan?) then (Yes)
+    :Tampilkan Daftar Kendaraan;
+else (No)
+    :Tampilkan Pesan "Data Tidak Ditemukan";
+endif
+
+:User Request (Tambah Kendaraan);
+:Validasi Data Kendaraan;
+if (Valid?) then (Yes)
+    :Simpan Data Kendaraan;
+    :Tampilkan Pesan "Data Berhasil Ditambahkan";
+else (No)
+    :Tampilkan Pesan "Data Tidak Valid";
+endif
+
+:User Request (Edit Kendaraan);
+:Validasi Data Kendaraan;
+if (Valid?) then (Yes)
+    :Perbarui Data Kendaraan;
+    :Tampilkan Pesan "Data Berhasil Diperbarui";
+else (No)
+    :Tampilkan Pesan "Data Tidak Valid";
+endif
+
+:User Request (Hapus Kendaraan);
+if (Data Ada?) then (Yes)
+    :Hapus Data Kendaraan;
+    :Tampilkan Pesan "Data Berhasil Dihapus";
+else (No)
+    :Tampilkan Pesan "Data Tidak Ditemukan";
+endif
+
+stop
+@enduml
