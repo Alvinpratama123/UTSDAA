@@ -1,0 +1,15 @@
+@startuml
+actor Admin as User
+
+usecase "Melihat Daftar Kendaraan" as UC_ViewAll
+usecase "Menambah Kendaraan" as UC_AddVehicle
+usecase "Melihat Detail Kendaraan" as UC_ViewDetail
+usecase "Mengedit Data Kendaraan" as UC_UpdateVehicle
+usecase "Menghapus Data Kendaraan" as UC_DeleteVehicle
+
+User --> UC_ViewAll
+User --> UC_AddVehicle
+User --> UC_ViewDetail
+User --> UC_UpdateVehicle
+User --> UC_DeleteVehicle
+@enduml
