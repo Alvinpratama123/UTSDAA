@@ -1,0 +1,61 @@
+
+Analisis Sistem Manajemen Data Kendaraan
+1. Pendahuluan
+Sistem ini bertujuan untuk mengelola data kendaraan secara efektif, termasuk mencatat, memperbarui, menghapus, dan menampilkan data kendaraan yang tersimpan di dalam database. Aplikasi ini didesain dengan user-friendly untuk memudahkan admin dalam melakukan aktivitas sehari-hari seperti memonitor dan mengelola informasi kendaraan.
+
+2. Fitur Utama:
+Aplikasi ini menyediakan beberapa fitur utama sebagai berikut:
+
+Melihat Daftar Kendaraan: Menampilkan semua data kendaraan yang terdaftar di dalam sistem.
+Menambah Kendaraan: Menambahkan data kendaraan baru ke dalam sistem.
+Melihat Detail Kendaraan: Menampilkan detail kendaraan berdasarkan ID atau pencarian.
+Mengedit Data Kendaraan: Memperbarui informasi kendaraan yang sudah ada.
+Menghapus Data Kendaraan: Menghapus kendaraan dari database.
+3. Analisis Use Case
+Use Case Diagram menggambarkan interaksi antara aktor (admin) dan sistem melalui beberapa skenario atau kasus penggunaan yang mencerminkan kebutuhan pengguna.
+
+Aktor:
+
+Admin: Pihak yang mengelola dan memiliki akses penuh terhadap data kendaraan di dalam sistem.
+Use Cases:
+
+Melihat Daftar Kendaraan: Admin dapat mengakses halaman yang menampilkan seluruh kendaraan yang ada di sistem. Sistem menampilkan daftar lengkap kendaraan yang tersimpan.
+
+Menambah Kendaraan: Admin dapat menambahkan kendaraan baru dengan mengisi form berisi informasi kendaraan. Sistem melakukan validasi untuk memastikan data yang dimasukkan sudah benar, kemudian menyimpan data ke dalam database.
+
+Melihat Detail Kendaraan: Admin dapat melihat detail lengkap dari kendaraan yang sudah ada. Admin dapat mengakses informasi seperti merek, tipe, tahun, warna, nomor polisi, dan pemilik kendaraan berdasarkan ID yang dipilih.
+
+Mengedit Data Kendaraan: Admin dapat melakukan pembaruan terhadap data kendaraan yang sudah ada, seperti mengganti tahun, warna, atau pemilik kendaraan. Sistem akan memvalidasi data yang dimasukkan dan memperbarui data tersebut di database.
+
+Menghapus Data Kendaraan: Admin dapat menghapus kendaraan dari sistem. Ketika data dihapus, sistem akan mengonfirmasi tindakan ini untuk mencegah penghapusan yang tidak sengaja.
+
+4. Analisis Komponen Sistem
+Model Kendaraan: Model kendaraan yang kita buat akan merepresentasikan data kendaraan di dalam database. Dengan menggunakan Eloquent ORM di Laravel, kita mengelola entitas Vehicle yang memiliki atribut seperti brand, model, year, color, license_plate, dan owner. Model ini akan menjadi penghubung antara controller dan database.
+
+Resource Controller: Controller (VehicleController) menangani semua permintaan dari pengguna untuk melakukan operasi CRUD (Create, Read, Update, Delete) terhadap data kendaraan. Setiap aksi akan dilakukan dalam satu metode, seperti:
+
+index() untuk menampilkan semua kendaraan,
+store() untuk menambahkan kendaraan baru,
+show() untuk menampilkan detail kendaraan berdasarkan ID,
+update() untuk memperbarui data kendaraan,
+destroy() untuk menghapus data kendaraan.
+Seeder: Seeder digunakan untuk mengisi data awal ke dalam database, yang berguna untuk pengujian atau demo. Sebagai contoh, kita dapat mengisi tabel kendaraan dengan beberapa data kendaraan sampel untuk menguji sistem.
+
+5. Alur Pengguna dan Sistem (Flowchart)
+Flowchart menggambarkan alur kerja sistem, mulai dari admin yang meminta data kendaraan hingga sistem memproses permintaan tersebut. Berikut ini adalah alur kerjanya:
+
+Melihat Daftar Kendaraan: Admin mengakses halaman daftar kendaraan dan sistem menampilkan data kendaraan yang ada.
+Menambah Kendaraan: Admin mengisi form dengan data kendaraan baru, sistem memvalidasi dan menyimpan data tersebut.
+Melihat Detail Kendaraan: Admin memilih kendaraan untuk melihat detailnya, sistem menampilkan informasi lengkap kendaraan.
+Mengedit Data Kendaraan: Admin memperbarui data kendaraan yang ada, sistem memvalidasi dan memperbarui data.
+Menghapus Data Kendaraan: Admin memilih kendaraan untuk dihapus, sistem mengonfirmasi dan menghapus data tersebut.
+6. Penggunaan Teknologi
+Framework Laravel digunakan untuk mengembangkan aplikasi ini karena kemudahan penggunaan dan fitur-fitur yang sudah built-in, seperti Eloquent ORM untuk interaksi dengan database, serta Blade untuk tampilan antarmuka.
+MySQL atau database relational lainnya digunakan untuk menyimpan data kendaraan, menggunakan tabel vehicles dengan kolom yang sudah ditentukan sebelumnya.
+PlantUML digunakan untuk menggambarkan diagram UML seperti Use Case Diagram, Class Diagram, dan Flowchart yang membantu memahami struktur dan alur kerja aplikasi.
+7. Keuntungan dan Manfaat Sistem
+Efisiensi: Aplikasi ini meningkatkan efisiensi dalam mengelola data kendaraan. Semua data tersimpan dalam satu sistem terpusat dan dapat diakses dengan mudah.
+Aksesibilitas: Admin dapat mengakses data kendaraan kapan saja untuk melakukan pembaruan atau pengecekan status kendaraan.
+Pengelolaan yang Lebih Baik: Dengan adanya CRUD untuk data kendaraan, admin dapat dengan mudah menambah, mengubah, atau menghapus data kendaraan tanpa kesulitan.
+8. Kesimpulan
+Sistem manajemen data kendaraan ini memberikan solusi yang efisien dan terstruktur dalam mengelola informasi kendaraan yang digunakan oleh admin. Dengan menggunakan Laravel, aplikasi ini dapat dengan mudah di-develop, di-maintain, dan di-scaled. Alur penggunaan yang jelas dan komponen sistem yang saling terintegrasi menjadikan aplikasi ini mudah digunakan dan dikelola.
